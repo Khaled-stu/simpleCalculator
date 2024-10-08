@@ -86,7 +86,7 @@ namespace simpleCalculator
         private void btnAdd_Click(object sender, EventArgs e)
         {
             operation = "+";
-            num1 = decimal.Parse(txtShowing.Text);
+            num1 = Convert.ToDecimal(txtShowing.Text);
 
 
         }
@@ -94,35 +94,35 @@ namespace simpleCalculator
         private void btnSub_Click(object sender, EventArgs e)
         {
             operation = "-";
-            num1 = decimal.Parse(txtShowing.Text);
+            num1 = Convert.ToDecimal(txtShowing.Text);
         }
 
         private void btnMulti_Click(object sender, EventArgs e)
         {
             operation = "*";
-            num1 = decimal.Parse(txtShowing.Text);
+            num1 = Convert.ToDecimal(txtShowing.Text);
         }
 
         private void brnDivide_Click(object sender, EventArgs e)
         {
             operation = "/";
-            num1 = decimal.Parse(txtShowing.Text);
+            num1 = Convert.ToDecimal(txtShowing.Text);
         }
 
         private void btnEq_Click(object sender, EventArgs e)
         {
-            num2 = decimal.Parse(txtShowing.Text);
+            num2 = Convert.ToDecimal(txtShowing.Text);
             
             if (operation == ("+"))
                 result = num1 + num2;
 
-            if (operation.Equals("-"))
+            if (operation== ("-"))
                 result = num1 - num2;
-            if (operation.Equals("*"))
+            if (operation ==("*"))
                 result = num1 * num2;
-            if (operation.Equals("/"))
+            if (operation == ("/"))
                 result = num1 / num2;
-            txtShowing.Text = result + "";
+            txtShowing.Text = Convert.ToString(result);
             
         }
     }
